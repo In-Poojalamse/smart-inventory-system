@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Smart Inventory - Login</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+
+</head>
+
+
+<body class="login-page">
+
+
+<div class="login-container">
+
+
+    <div class="login-card">
+
+
+        <!-- LOGO -->
+
+        <div class="login-logo">
+            📦
+        </div>
+
+
+        <h1>
+            Smart Inventory
+        </h1>
+
+
+        <p class="login-subtitle">
+            Inventory Management System
+        </p>
+
+
+
+        <!-- ERROR MESSAGE -->
+
+        <div
+                id="errorMessage"
+                class="login-message error-message"
+        >
+            Invalid username or password.
+        </div>
+
+
+
+        <!-- LOGOUT MESSAGE -->
+
+        <div
+                id="logoutMessage"
+                class="login-message success-message"
+        >
+            You have been logged out successfully.
+        </div>
+
+
+
+        <!-- LOGIN FORM -->
+
+        <form
+                action="/login"
+                method="post"
+                class="login-form"
+        >
+
+
+            <div class="login-form-group">
+
+                <label for="username">
+                    Username
+                </label>
+
+                <input
+                        type="text"
+                        id="username"
+                        name="username"
+                        placeholder="Enter your username"
+                        autocomplete="username"
+                        required
+                >
+
+            </div>
+
+
+
+            <div class="login-form-group">
+
+                <label for="password">
+                    Password
+                </label>
+
+                <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Enter your password"
+                        autocomplete="current-password"
+                        required
+                >
+
+            </div>
+
+
+
+            <button
+                    type="submit"
+                    class="login-button"
+            >
+                Login
+            </button>
+
+
+        </form>
+
+
+
+        <!-- DEMO CREDENTIALS -->
+
+        <div class="demo-login">
+
+            <h3>
+                Demo Login
+            </h3>
+
+            <p>
+                Username:
+                <strong>pooja</strong>
+            </p>
+
+            <p>
+                Password:
+                <strong>pooja123</strong>
+            </p>
+
+        </div>
+
+
+        <div class="login-footer">
+
+            Smart Inventory Management System
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+
+<script>
+
+    const params =
+        new URLSearchParams(
+            window.location.search
+        );
+
+
+    /*
+     * SHOW INVALID LOGIN MESSAGE
+     */
+
+    if (params.has("error")) {
+
+        document
+            .getElementById("errorMessage")
+            .style.display = "block";
+
+    }
+
+
+    /*
+     * SHOW LOGOUT MESSAGE
+     */
+
+    if (params.has("logout")) {
+
+        document
+            .getElementById("logoutMessage")
+            .style.display = "block";
+
+    }
+
+</script>
+
+
+</body>
+
+</html>
